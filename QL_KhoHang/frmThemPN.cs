@@ -149,4 +149,56 @@ namespace QL_KhoHang
 
             }
         }
+		
+
+        
+
+        private void btnTaoMoi_Click(object sender, EventArgs e)
+        {
+            frmThemPN_Load(sender, e);
+            dgvSPN.Rows.Clear();
+            numericUpDownSL.Value = 1;
+        }
+        int indexSP = 0;
+        private void dgvSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexSP = e.RowIndex;
+            mahh = dgvSP.Rows[e.RowIndex].Cells[0].Value.ToString();
+            soluong = int.Parse(numericUpDownSL.Value.ToString());
+            gianhap = long.Parse(numericUpDownGN.Value.ToString());
+            //pictureBox1.Image = Image.FromFile(@"image//laptop//" + sp.LayAnh(dgvSP.Rows[e.RowIndex].Cells[1].Value.ToString()));
+        }
+        int indexSPN = 0;
+        private void dgvSPN_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indexSPN = e.RowIndex;
+        }
+
+        private void btnTao_Click(object sender, EventArgs e)
+        {
+            if (dgvSPN.Rows.Count > 1)
+            {
+                string mancc = cboTenNCC.SelectedValue.ToString();
+                DateTime ngaynhap = dateTimePicker1.Value;
+                string mapn = pn.InsertPN(mancc, ngaynhap);
+
+                for (int i = 0; i < dgvSPN.Rows.Count - 1; i++)
+                {
+                    mahh = dgvSPN.Rows[i].Cells[0].Value.ToString();
+                    soluong = int.Parse(dgvSPN.Rows[i].Cells[1].Value.ToString());
+                    gianhap = long.Parse(dgvSPN.Rows[i].Cells[2].Value.ToString());
+                    long thanhtien = long.Parse(dgvSPN.Rows[i].Cells[3].Value.ToString());
+                    ctpn.InsertCTHD(mapn, mahh, soluong, gianhap, thanhtien);
+                    pn.addTien(mapn);
+                    //sp.UpdateSoLuong(et_sp);
+                }
+                MessageBox.Show("Thêm dữ liệu thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               // btnTao_Click(sender, e);
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 }
