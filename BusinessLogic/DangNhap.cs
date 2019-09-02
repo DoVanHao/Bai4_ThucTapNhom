@@ -13,7 +13,7 @@ namespace BusinessLogic
         KetNoiDB da = new KetNoiDB();
         public bool DangNhapHT(string Username, string Pass)
         {
-            string sql = "SELECT * FROM DANGNHAP WHERE UserName='" + Username + "' AND Pass='" + Pass + "'";
+            string sql = "SELECT * FROM dbo.DANGNHAP WHERE UserName='" + Username + "' AND Pass='" + Pass + "'";
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             DataTable dt = new DataTable();
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);

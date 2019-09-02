@@ -73,38 +73,9 @@ namespace BusinessLogic
             con.Close();
         }
         //Xoa mot khách hàng
-        public void DeleteKhachHang(string MaKh)
-        {
-            string sql = "DeleteKH";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@MaKH", MaKh);
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-        }
+       
         //Tim kiem khach hang
-        public DataTable SearchKH(string _TenKH)
-        {
-            DataTable dt = new DataTable();
-            string sql = "SearchTenKH";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@str", _TenKH);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
-            con.Close();
-            cmd.Dispose();
-            return dt;
-
-        }
+       
         //Tim kiem theo loai khach hang
         public DataTable SearchLoaiKH(string _LoaiKH)
         {
@@ -124,24 +95,7 @@ namespace BusinessLogic
             cmd.Dispose();
             return dt;
         }
-        public DataTable SearchDCKH(string _DiaChi)
-        {
-            DataTable dt = new DataTable();
-            string sql = "SearchDCKH";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@str", _DiaChi);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
-            con.Close();
-            cmd.Dispose();
-            return dt;
-        }
+      
         //Show 10 khach hang
         public DataTable Show10KH()
         {

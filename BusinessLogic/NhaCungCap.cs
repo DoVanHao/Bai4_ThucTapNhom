@@ -20,55 +20,7 @@ namespace BusinessLogic
             ad.Fill(dt);
             return dt;
         }
-        public void InsertNCC(string _TenNCC, string _DiaChi, string _SDT)
-        {
-            string sql = "ThemNCC";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@tenlh", _TenNCC);
-            cmd.Parameters.AddWithValue("@diachi", _DiaChi);
-            cmd.Parameters.AddWithValue("@sdt", _SDT);
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-
-        }
-        public void UpdateNCC(string _MaNCC, string _TenNCC, string _DiaChi, string _SDT)
-        {
-            string sql = "SuaNCC";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@mancc", _MaNCC);
-            cmd.Parameters.AddWithValue("@tenncc", _TenNCC);
-            cmd.Parameters.AddWithValue("@diachi", _DiaChi);
-            cmd.Parameters.AddWithValue("@sdt", _SDT);
-
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-
-        }
-        public void DeleteNCC(string _MaNCC)
-        {
-            string sql = "XoaNCC";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@mancc", _MaNCC);
-
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-        }
+        
+      
     }
 }

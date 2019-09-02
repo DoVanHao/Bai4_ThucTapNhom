@@ -57,9 +57,9 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(295, 296);
+            this.btnThoat.Location = new System.Drawing.Point(204, 290);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(75, 31);
             this.btnThoat.TabIndex = 14;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(176, 235);
+            this.btnDangNhap.Location = new System.Drawing.Point(192, 236);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(128, 43);
+            this.btnDangNhap.Size = new System.Drawing.Size(101, 43);
             this.btnDangNhap.TabIndex = 13;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
