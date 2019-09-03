@@ -52,26 +52,7 @@ namespace QL_KhoHang
             }
         }
 
-        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            DKOThongTin(false);
-            try
-            {
-                txtMaKH.Text = dgvKhachHang.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txttenKH.Text = dgvKhachHang.Rows[e.RowIndex].Cells[2].Value.ToString();
-                cmbGioiTinh.Text = dgvKhachHang.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtDC.Text = dgvKhachHang.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtSoDT.Text = dgvKhachHang.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cmbLoaiKH.Text = dgvKhachHang.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtGhichu.Text = dgvKhachHang.Rows[e.RowIndex].Cells[7].Value.ToString();
-            }
-            catch
-            {
-                return;
-            }
-        }
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -165,21 +146,26 @@ namespace QL_KhoHang
                 i++;
             }
         }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
+		private void frmNhapXuat_Load(object sender, EventArgs e)
         {
-            HienThiDGV();
+            dgvPN.DataSource = pn.ShowPN("");
+            dgvCTPN.DataSource = ctpn.ShowCTPN("");
+            dgvXuat.DataSource = px.ShowPX("");
+            dgvCTXuat.DataSource = ctpx.ShowCTPX("");
         }
 
-        private void btnThongKe_Click(object sender, EventArgs e)
+        private void btnThemPN_Click(object sender, EventArgs e)
         {
-            dgvKhachHang.DataSource = kh.ShowKHTHeoNgay(DateTime.Parse(dateTimePicker1.Text), DateTime.Parse( dateTimePicker2.Text));
-            int i = 0;
-            while (i < dgvKhachHang.Rows.Count - 1)
-            {
-                dgvKhachHang.Rows[i].Cells[0].Value = (i + 1).ToString();
-                i++;
-            }
+            frmThemPN frm = new frmThemPN();
+            frm.Show();
         }
+
+        private void btnThemPX_Click(object sender, EventArgs e)
+        {
+            frmThemPX frm = new frmThemPX();
+            frm.Show();
+        }
+
+
     }
 }
