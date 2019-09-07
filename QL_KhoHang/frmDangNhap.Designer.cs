@@ -111,6 +111,7 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "                                    Design by Hoang Anh, Dung, Luong, Long       " +
     "         ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 

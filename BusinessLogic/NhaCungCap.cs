@@ -13,7 +13,7 @@ namespace BusinessLogic
         KetNoiDB da = new KetNoiDB();
         public DataTable ShowNCC(string DieuKien)
         {
-            string sql = @"SELECT * FROM NHACUNGCAP " + DieuKien;
+            string sql = @"SELECT * FROM dbo.NHACUNGCAP " + DieuKien;
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);

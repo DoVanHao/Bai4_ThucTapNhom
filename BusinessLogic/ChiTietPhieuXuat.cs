@@ -61,19 +61,6 @@ namespace BusinessLogic
             ad.Fill(dt);
             return dt;
         }
-        //public void DeleteCTHDB(string _MaHDB, string _MaSP)
-        //{
-        //    string str = "DeleteCTHDB";
-        //    SqlConnection con = new SqlConnection();
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(str, con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-
-        //    cmd.Parameters.AddWithValue("@MaHDB", _MaHDB);
-        //    cmd.Parameters.AddWithValue("@MaSP", _MaSP);
-        //    cmd.ExecuteNonQuery();
-        //    cmd.Dispose();
-        //    con.Close();
-        //}
+        
     }
 }

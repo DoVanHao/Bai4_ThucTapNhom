@@ -48,7 +48,20 @@ namespace BusinessLogic
             ad.Fill(dt);
             return dt;
         }
+        public void deletecthdb(string _mahdb, string _masp)
+        {
+            string str = "deletecthdb";
+            sqlconnection con = new sqlconnection();
+            con.open();
+            sqlcommand cmd = new sqlcommand(str, con);
+            cmd.commandtype = commandtype.storedprocedure;
 
+            cmd.parameters.addwithvalue("@mahdb", _mahdb);
+            cmd.parameters.addwithvalue("@masp", _masp);
+            cmd.executenonquery();
+            cmd.dispose();
+            con.close();
+        }
         public DataTable HienThiTien(string DieuKien)
         {
             string sql = @"SELECT TongTien FROM PHIEUNHAP WHERE MaPN = '" + DieuKien + "'";
