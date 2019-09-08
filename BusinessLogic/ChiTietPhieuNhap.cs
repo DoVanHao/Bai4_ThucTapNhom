@@ -12,7 +12,7 @@ namespace BusinessLogic
         KetNoiDB da = new KetNoiDB();
         public DataTable ShowCTPN(string DieuKien)
         {
-            string sql = @"SELECT MaHH, SoLuong, DonGia, ThanhTien FROM CHITIETPHIEUNHAP " + DieuKien;
+            string sql = @"SELECT MaHH, SoLuong, DonGia, ThanhTien FROM dbo.CHITIETPHIEUNHAP " + DieuKien;
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);
@@ -41,30 +41,17 @@ namespace BusinessLogic
 
         public DataTable HienThi(string DieuKien)
         {
-            string sql = @"SELECT * FROM CHITIETPHIEUNHAP WHERE MaPN = '" + DieuKien + "'";
+            string sql = @"SELECT * FROM dbo.CHITIETPHIEUNHAP WHERE MaPN = '" + DieuKien + "'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);
             ad.Fill(dt);
             return dt;
         }
-        public void deletecthdb(string _mahdb, string _masp)
-        {
-            string str = "deletecthdb";
-            sqlconnection con = new sqlconnection();
-            con.open();
-            sqlcommand cmd = new sqlcommand(str, con);
-            cmd.commandtype = commandtype.storedprocedure;
-
-            cmd.parameters.addwithvalue("@mahdb", _mahdb);
-            cmd.parameters.addwithvalue("@masp", _masp);
-            cmd.executenonquery();
-            cmd.dispose();
-            con.close();
-        }
+       
         public DataTable HienThiTien(string DieuKien)
         {
-            string sql = @"SELECT TongTien FROM PHIEUNHAP WHERE MaPN = '" + DieuKien + "'";
+            string sql = @"SELECT TongTien FROM dbo.PHIEUNHAP WHERE MaPN = '" + DieuKien + "'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);

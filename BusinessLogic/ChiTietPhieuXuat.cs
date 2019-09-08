@@ -44,7 +44,7 @@ namespace BusinessLogic
 
         public DataTable HienThi(string DieuKien)
         {
-            string sql = @"SELECT * FROM CHITIETPHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
+            string sql = @"SELECT * FROM dob.CHITIETPHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);
@@ -54,7 +54,7 @@ namespace BusinessLogic
 
         public DataTable HienThiTien(string DieuKien)
         {
-            string sql = @"SELECT TongTien FROM PHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
+            string sql = @"SELECT TongTien FROM dbo.PHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             SqlDataAdapter ad = new SqlDataAdapter(sql, con);

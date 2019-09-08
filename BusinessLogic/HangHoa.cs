@@ -14,10 +14,10 @@ namespace BusinessLogic
         public DataTable ShowHangHoa(string DieuKien)
         {
             string sql = @"SELECT MaHH, TenHH, SoLuong, GiaNhap, GiaXuat, NSX, ThongTin
-                                                    FROM HangHoa " + DieuKien;
+                                                    FROM dbo.HANGHOA " + DieuKien;
             DataTable dt = new DataTable();
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
             ad.Fill(dt);
             return dt;
         }
@@ -46,7 +46,7 @@ namespace BusinessLogic
         }
         public DataTable TKHH_TenHH(string TenHH)
         {
-            string sql = "SELECT * FROM HANGHOA WHERE TenHH LIKE N'%' + @TenHH + '%'";
+            string sql = "SELECT * FROM dbo.HANGHOA WHERE TenHH LIKE N'%' + @TenHH + '%'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             con.Open();
@@ -60,7 +60,7 @@ namespace BusinessLogic
         }
         public DataTable TKHH_NSX(string NSX)
         {
-            string sql = "SELECT * FROM HANGHOA WHERE NSX LIKE N'%' + @NSX + '%'";
+            string sql = "SELECT * FROM dbo.HANGHOA WHERE NSX LIKE N'%' + @NSX + '%'";
             DataTable dt = new DataTable();
             SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
             con.Open();

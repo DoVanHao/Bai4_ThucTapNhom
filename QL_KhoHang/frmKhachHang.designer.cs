@@ -173,7 +173,6 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnXoa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.BackgroundImage")));
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -415,7 +414,7 @@
             this.btnKH.ForeColor = System.Drawing.Color.Red;
             this.btnKH.Location = new System.Drawing.Point(11, 16);
             this.btnKH.Name = "btnKH";
-            this.btnKH.Size = new System.Drawing.Size(199, 37);
+            this.btnKH.Size = new System.Drawing.Size(193, 37);
             this.btnKH.TabIndex = 0;
             this.btnKH.Text = "Top 10 KH Mua Nhiều Nhất";
             this.btnKH.UseVisualStyleBackColor = false;
@@ -555,7 +554,7 @@
             this.lblTopic.ForeColor = System.Drawing.Color.Red;
             this.lblTopic.Location = new System.Drawing.Point(342, 15);
             this.lblTopic.Name = "lblTopic";
-            this.lblTopic.Size = new System.Drawing.Size(239, 27);
+            this.lblTopic.Size = new System.Drawing.Size(238, 27);
             this.lblTopic.TabIndex = 23;
             this.lblTopic.Text = "Thông Tin Khách Hàng";
             // 
