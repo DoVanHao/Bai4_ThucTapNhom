@@ -179,6 +179,7 @@
             this.label13.Size = new System.Drawing.Size(79, 15);
             this.label13.TabIndex = 80;
             this.label13.Text = "( x1000 VND )";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label11
             // 

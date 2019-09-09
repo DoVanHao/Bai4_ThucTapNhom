@@ -70,7 +70,6 @@
             this.lblMaKH = new System.Windows.Forms.Label();
             this.panelKH = new System.Windows.Forms.Panel();
             this.lblTopic = new System.Windows.Forms.Label();
-            this.pictureBoxKH = new System.Windows.Forms.PictureBox();
             this.cmbGioiTinh = new System.Windows.Forms.ComboBox();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblGhichu = new System.Windows.Forms.Label();
@@ -80,7 +79,6 @@
             this.groupBoxTimKiem.SuspendLayout();
             this.groupBoxThongKeKH.SuspendLayout();
             this.panelKH.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKhachHang
@@ -521,7 +519,6 @@
             this.panelKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panelKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelKH.Controls.Add(this.lblTopic);
-            this.panelKH.Controls.Add(this.pictureBoxKH);
             this.panelKH.Controls.Add(this.btnXoa);
             this.panelKH.Controls.Add(this.cmbGioiTinh);
             this.panelKH.Controls.Add(this.btnSua);
@@ -557,18 +554,6 @@
             this.lblTopic.Size = new System.Drawing.Size(238, 27);
             this.lblTopic.TabIndex = 23;
             this.lblTopic.Text = "Thông Tin Khách Hàng";
-            // 
-            // pictureBoxKH
-            // 
-            this.pictureBoxKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.pictureBoxKH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBoxKH.BackgroundImage")));
-            this.pictureBoxKH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxKH.Location = new System.Drawing.Point(821, 5);
-            this.pictureBoxKH.Name = "pictureBoxKH";
-            this.pictureBoxKH.Size = new System.Drawing.Size(237, 210);
-            this.pictureBoxKH.TabIndex = 22;
-            this.pictureBoxKH.TabStop = false;
             // 
             // cmbGioiTinh
             // 
@@ -637,7 +622,6 @@
             this.groupBoxThongKeKH.PerformLayout();
             this.panelKH.ResumeLayout(false);
             this.panelKH.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +654,6 @@
         private System.Windows.Forms.Label lblMaKH;
         private System.Windows.Forms.Panel panelKH;
         private System.Windows.Forms.Label lblTopic;
-        private System.Windows.Forms.PictureBox pictureBoxKH;
         private System.Windows.Forms.ComboBox cmbGioiTinh;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.Label lblGhichu;

@@ -52,5 +52,9 @@ namespace QL_KhoHang
             dataGridView1.DataSource = hh.TKHH_NSX(txttk_NSX.Text);
         }
 
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
