@@ -181,5 +181,31 @@ namespace QL_KhoHang
                 i++;
             }
         }
+		        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa?", "Cảnh báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    kh.DeleteKhachHang(txtMaKH.Text);
+                    setNULL();
+                    DKOThongTin(false);
+                }
+                catch { }
+            }
+            HienThiDGV();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn Sửa thông tin khach hang này?", "Cảnh báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                DKOThongTin(true);
+                txtMaKH.Enabled = false;
+                temp = 1;
+                btnLuu.Enabled = true;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = false;
+            }
+        }
     }
 }
