@@ -52,4 +52,64 @@ namespace QL_KhoHang
         }
         
     }
+	
+	private void btnThem_Click(object sender, EventArgs e)
+        {
+            string tenhh = txtTenSP.Text;
+            soluong = Convert.ToInt32(numericUpDown2.Value.ToString());
+            gianhap = long.Parse(numericUpDown3.Value.ToString());
+            giaxuat = long.Parse(numericUpDownGX.Value.ToString());
+            nsx = txtNSX.Text;
+            thongtin = txtMoTa.Text;
+            string ma = hh.InsertHangHoa(tenhh, soluong, gianhap, giaxuat, nsx, thongtin);
+            MessageBox.Show("Thêm dữ liệu thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            HienThi();
+            if (dgvSP.SelectedRows.Count > 0)
+            {
+                dgvSPN.Rows.AddRange(new DataGridViewRow());
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[1].Value = ma;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[2].Value = soluong;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[3].Value = gianhap;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[4].Value = soluong * gianhap;
+            }
+            
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (txtTenSP.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên sản phẩm !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtNSX.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập tên NSX !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtMoTa.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin sản phẩm !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
+            try
+            {
+                string ma = hh.InsertHangHoa(tenhh, soluong, gianhap, giaxuat, nsx, thongtin);
+                dgvSPN.Rows.AddRange(new DataGridViewRow());
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[1].Value = ma;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[2].Value = soluong;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[3].Value = gianhap;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[4].Value = soluong * gianhap;
+                
+                MessageBox.Show("Thêm dữ liệu thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi();
+                cboTK.Enabled = true;
+                txtTK.Enabled = true;
+                btnLuu.Enabled = false;
+                btnThem.Enabled = true;
+            }
+            catch { }
+            SetNull();
+        }
 }
