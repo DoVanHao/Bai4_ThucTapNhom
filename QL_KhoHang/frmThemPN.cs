@@ -112,4 +112,41 @@ namespace QL_KhoHang
             catch { }
             SetNull();
         }
+		private void btnHuy_Click(object sender, EventArgs e)
+        {
+            SetNull();
+        }
+
+        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvSPN.Rows.Count; i++)
+            {
+                if (dgvSPN.Rows[i].Cells[0].Value == dgvSP.Rows[dgvSP.SelectedRows[0].Index].Cells[0].Value)
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (dgvSP.SelectedRows.Count > 0)
+            {
+                dgvSPN.Rows.AddRange(new DataGridViewRow());
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[0].Value = mahh;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[1].Value = numericUpDownSL.Value;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[2].Value = numericUpDownGN.Value;
+                dgvSPN.Rows[dgvSPN.RowCount - 2].Cells[3].Value = int.Parse(numericUpDownSL.Value.ToString()) * long.Parse(numericUpDownGN.Value.ToString());
+            }
+        }
+
+        private void btnXoaSP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvSPN.Rows.RemoveAt(indexSPN);
+                indexSPN--;
+            }
+            catch
+            {
+
+            }
+        }
 }
