@@ -44,11 +44,11 @@ namespace BusinessLogic
 
         public DataTable HienThi(string DieuKien)
         {
-            string sql = @"SELECT * FROM dob.CHITIETPHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
+            string sql = @"SELECT * FROM dbo.CHITIETPHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
             DataTable dt = new DataTable();
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
-            ad.Fill(dt);
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
             return dt;
         }
 

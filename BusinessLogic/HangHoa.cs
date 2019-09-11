@@ -10,15 +10,15 @@ namespace BusinessLogic
 {
     public class HangHoa
     {
-        KetNoiDB da = new KetNoiDB();
+        KetNoiDB db = new KetNoiDB();
         public DataTable ShowHangHoa(string DieuKien)
         {
             string sql = @"SELECT MaHH, TenHH, SoLuong, GiaNhap, GiaXuat, NSX, ThongTin
                                                     FROM dbo.HANGHOA " + DieuKien;
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
-            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
-            ad.Fill(dt);
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
             return dt;
         }
 
@@ -95,20 +95,20 @@ namespace BusinessLogic
             con.Close();
 
         }
-        //public void UpdateSoLuong(EC_SANPHAM  et)
-        //{
-        //    string sql = "SuaSL";
-        //    SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
+        public void UpdateSoLuong(EC_SANPHAM et)
+        {
+            string sql = "SuaSL";
+            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-        //    cmd.Parameters.AddWithValue("@masp", et.MaSP);
-        //    cmd.Parameters.AddWithValue("@sl", et.SoLuong);
-        //    cmd.ExecuteNonQuery();
-        //    cmd.Dispose();
-        //    con.Close();
-        //}
+            cmd.Parameters.AddWithValue("@masp", et.MaSP);
+            cmd.Parameters.AddWithValue("@sl", et.SoLuong);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
 
         //public void UpdateSoLuong(string MaSP, int SoLuong)
         //{

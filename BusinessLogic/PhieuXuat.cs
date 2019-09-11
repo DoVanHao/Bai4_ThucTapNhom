@@ -14,10 +14,10 @@ namespace BusinessLogic
 
         public DataTable ShowPX(string DieuKien)
         {
-            string sql = @"SELECT MaPX, MaCN, NgayXuat FROM PHIEUXUAT " + DieuKien;
+            string sql = @"SELECT MaPX, MaCN, NgayXuat FROM dbo.PHIEUXUAT " + DieuKien;
             DataTable dt = new DataTable();
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
             ad.Fill(dt);
             return dt;
         }
