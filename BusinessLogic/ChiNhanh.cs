@@ -10,6 +10,7 @@ namespace BusinessLogic
 {
     public class ChiNhanh
     {
+    // Hien thi khach hang
 
         public DataTable HienThiKhachHang()
         {
@@ -20,7 +21,7 @@ namespace BusinessLogic
             ad.Fill(dt);
             return dt;
         }
-
+        //Chen khach hang
         public string InsertKhachHang(string TenKH, string Gioitinh, string Diachi, string SDT, string LoaiKH, string Ghichu)
         {
             string str = "";
@@ -71,6 +72,7 @@ namespace BusinessLogic
             cmd.Dispose();
             con.Close();
         }
+        //Xoa mot khách hàng
         public void DeleteKhachHang(string MaKh)
         {
             string sql = "DeleteKH";
@@ -84,7 +86,7 @@ namespace BusinessLogic
             cmd.Dispose();
             con.Close();
         }
-
+        //Tim kiem khach hang
         public DataTable SearchKH(string _TenKH)
         {
             DataTable dt = new DataTable();
@@ -103,6 +105,7 @@ namespace BusinessLogic
             return dt;
 
         }
+        //Tim kiem theo loai khach hang
         public DataTable SearchLoaiKH(string _LoaiKH)
         {
             DataTable dt = new DataTable();
@@ -139,6 +142,7 @@ namespace BusinessLogic
             cmd.Dispose();
             return dt;
         }
+        //Show 10 khach hang
         public DataTable Show10KH()
         {
             DataTable dt = new DataTable();
@@ -155,6 +159,7 @@ namespace BusinessLogic
             cmd.Dispose();
             return dt;
         }
+        //Show khach hang theo ngay
         public DataTable ShowKHTHeoNgay(DateTime date1, DateTime date2)
         {
             DataTable dt = new DataTable();
