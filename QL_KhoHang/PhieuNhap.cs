@@ -77,20 +77,7 @@ namespace BusinessLogic
             da.Fill(dt);
             return dt;
         }
-        //public DataTable PhieuNhap(string _MaNCC)
-        //{
-        //    string sql = "PhieuNhap";
-        //    DataTable dt = new DataTable();
-        //    SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-
-        //    cmd.Parameters.AddWithValue("@mancc", _MaNCC);
-        //    SqlDataAdapter ad = new SqlDataAdapter(cmd);
-        //    ad.Fill(dt);
-        //    return dt;
-        //}
+     
         public string InsertPN(string mancc, DateTime ngaynhap)
         {
             string sql = "ThemPN";
@@ -113,52 +100,9 @@ namespace BusinessLogic
             if (ma != null) return ma;
             return "error";
         }
-        //public void UpdateHDN(EC_HOADONNHAP et)
-        //{
-        //    string sql = "SuaHDN";
-        //    SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@mahdn", et.MaHDN);
-        //    cmd.Parameters.AddWithValue("@mancc", et.MaNCC);
-        //    cmd.Parameters.AddWithValue("@ngaynhap", et.NgayNhap);
+        
 
 
-        //    cmd.ExecuteNonQuery();
-        //    cmd.Dispose();
-        //    con.Close();
-
-        //}
-        //public void DeleteHDN(string _MaHDN)
-        //{
-        //    string sql = "XoaHDN";
-        //    SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@mahdn", _MaHDN);
-
-        //    cmd.ExecuteNonQuery();
-        //    cmd.Dispose();
-        //    con.Close();
-        //}
-
-        public string TongTien(string mapn)
-        {
-            string sql = "TongTien";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
-            con.Open();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@mapn", mapn);
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            ad.Fill(dt);
-            cmd.Dispose();
-            con.Close();
-            string tien = dt.Rows[0].ItemArray[0].ToString();
-            return tien;
-        }
+     
     }
 }
