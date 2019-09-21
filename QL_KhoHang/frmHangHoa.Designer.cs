@@ -50,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,20 +59,18 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.txttk_NSX);
-            this.panel1.Controls.Add(this.txttk_TenHH);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -83,7 +80,7 @@
             // 
             // txttk_NSX
             // 
-            this.txttk_NSX.Location = new System.Drawing.Point(627, 33);
+            this.txttk_NSX.Location = new System.Drawing.Point(440, 36);
             this.txttk_NSX.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txttk_NSX.Name = "txttk_NSX";
             this.txttk_NSX.Size = new System.Drawing.Size(160, 22);
@@ -92,7 +89,7 @@
             // 
             // txttk_TenHH
             // 
-            this.txttk_TenHH.Location = new System.Drawing.Point(297, 33);
+            this.txttk_TenHH.Location = new System.Drawing.Point(135, 33);
             this.txttk_TenHH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txttk_TenHH.Name = "txttk_TenHH";
             this.txttk_TenHH.Size = new System.Drawing.Size(188, 22);
@@ -102,7 +99,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(508, 42);
+            this.label8.Location = new System.Drawing.Point(341, 36);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 17);
@@ -112,7 +109,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(151, 42);
+            this.label3.Location = new System.Drawing.Point(30, 36);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 17);
@@ -196,7 +193,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(652, 90);
+            this.label11.Location = new System.Drawing.Point(656, 90);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 17);
@@ -205,12 +202,12 @@
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(135, 175);
+            this.txtMoTa.Location = new System.Drawing.Point(169, 175);
             this.txtMoTa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtMoTa.Size = new System.Drawing.Size(900, 106);
+            this.txtMoTa.Size = new System.Drawing.Size(866, 106);
             this.txtMoTa.TabIndex = 58;
             this.txtMoTa.WordWrap = false;
             // 
@@ -245,9 +242,9 @@
             this.label7.Location = new System.Drawing.Point(25, 174);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.Size = new System.Drawing.Size(136, 17);
             this.label7.TabIndex = 53;
-            this.label7.Text = "Thông Tin";
+            this.label7.Text = "Thông tin hàng hóa:";
             // 
             // label6
             // 
@@ -298,16 +295,6 @@
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 47;
             this.label1.Text = "Mã HH";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 42);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 17);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "Tìm kiếm theo";
             // 
             // dataGridView1
             // 
@@ -387,6 +374,19 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txttk_NSX);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txttk_TenHH);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Location = new System.Drawing.Point(16, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1077, 69);
+            this.groupBox1.TabIndex = 91;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm kiếm theo";
+            // 
             // frmHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -401,10 +401,11 @@
             this.Text = "Danh sách hàng hóa";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -429,7 +430,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -443,6 +443,7 @@
         private System.Windows.Forms.TextBox txttk_TenHH;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
