@@ -104,7 +104,7 @@ namespace BusinessLogic
             string tien = dt.Rows[0].ItemArray[0].ToString();
             return tien;
         }
-
+// them
         public DataTable HienThiPN(string DieuKien)
         {
             string sql = @"SELECT MaPN, MaNCC, NgayNhap FROM PHIEUNHAP " + DieuKien;
@@ -128,6 +128,19 @@ namespace BusinessLogic
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
             ad.Fill(dt);
             return dt;
+        }
+
+        public void ThemTien(string MaPN)
+        {
+            string sql = "TienNhap";
+            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@MaPN", MaPN);
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
         }
     }
 }
