@@ -82,7 +82,7 @@
             treeNode10});
             this.treeView1.Size = new System.Drawing.Size(172, 378);
             this.treeView1.TabIndex = 1;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.trViewGioiThieu_AfterSelect);
+          
             // 
             // pictureBox1
             // 
