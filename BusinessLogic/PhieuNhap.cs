@@ -164,5 +164,22 @@ namespace BusinessLogic
             if (ma != null) return ma;
             return "error";
         }
+
+        public string TongTien(string mapn)
+        {
+            string sql = "TongTien";
+            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mapn", mapn);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            cmd.Dispose();
+            con.Close();
+            string tien = dt.Rows[0].ItemArray[0].ToString();
+            return tien;
+        }
     }
 }
