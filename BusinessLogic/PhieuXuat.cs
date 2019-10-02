@@ -86,6 +86,16 @@ namespace BusinessLogic
             if (ma != null) return ma;
             return "error";
         }
-        
+
+        public DataTable HienThiPX(string DieuKien)
+        {
+            string sql = @"SELECT MaPX, MaCN, NgayXuat FROM dbo.PHIEUXUAT " + DieuKien;
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
+            ad.Fill(dt);
+            return dt;
+        }
+
     }
 }
