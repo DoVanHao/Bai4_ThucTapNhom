@@ -73,6 +73,19 @@ namespace QL_KhoHang
             dgvXuat.DataSource = px.HT_PX(dtp3.Text, dtp4.Text);
             dgvCTXuat.DataSource = px.HT_CTPX(dtp3.Text, dtp4.Text);
         }
+        private void frmNhapXuat_change(object sender, EventArgs e)
+        {
+            dgvPN.DataSource = pn.ShowPN("");
+            dgvCTPN.DataSource = ctpn.ShowCTPN("");
+            dgvXuat.DataSource = px.ShowPX("");
+            dgvCTXuat.DataSource = ctpx.ShowCTPX("");
+        }
+
+        private void btnThemPN1_Click(object sender, EventArgs e)
+        {
+            frmThemPN frm = new frmThemPN();
+            frm.Show();
+        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
