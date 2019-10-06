@@ -97,5 +97,28 @@ namespace BusinessLogic
             return dt;
         }
 
+        public string InsertPX(string macn, DateTime ngayxuat)
+        {
+            string sql = "ThemPX";
+            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@macn", macn);
+            cmd.Parameters.AddWithValue("@ngayxuat", ngayxuat);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            ad.Fill(dt);
+            string ma = dt.Rows[0].ItemArray[0].ToString();
+
+            cmd.Dispose();
+            con.Close();
+            if (ma != null) return ma;
+            return "error";
+        }
+
     }
 }
