@@ -13,8 +13,8 @@ namespace BusinessLogic
             string sql = @"SELECT MaPX, MaCN, NgayXuat FROM dbo.PHIEUXUAT " + DieuKien;
             DataTable dt = new DataTable();
             SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
-            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
-            ad.Fill(dt);
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
             return dt;
         }
 

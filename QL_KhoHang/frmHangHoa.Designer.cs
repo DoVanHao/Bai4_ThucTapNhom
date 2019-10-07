@@ -94,7 +94,7 @@
             // 
             // txttk_NSX
             // 
-            this.txttk_NSX.Location = new System.Drawing.Point(332, 22);
+            this.txttk_NSX.Location = new System.Drawing.Point(332, 27);
             this.txttk_NSX.Name = "txttk_NSX";
             this.txttk_NSX.Size = new System.Drawing.Size(121, 20);
             this.txttk_NSX.TabIndex = 90;
@@ -208,7 +208,7 @@
             this.txtMoTa.Multiline = true;
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtMoTa.Size = new System.Drawing.Size(650, 87);
+            this.txtMoTa.Size = new System.Drawing.Size(650, 66);
             this.txtMoTa.TabIndex = 58;
             this.txtMoTa.WordWrap = false;
             // 
