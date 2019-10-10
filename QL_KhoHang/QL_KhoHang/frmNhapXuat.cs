@@ -80,9 +80,9 @@ namespace QL_KhoHang
         }
         private void btnTaoMoi_Click(object sender, EventArgs e)
         {
-            frmThemPX_Load(sender, e);
-            dgvSPX.Rows.Clear();
-            numericUpDownSL.Value = numericUpDownGN.Value = 1;
-        }s
+            //frmThemPX_Load(sender, e);
+            //dgvSPX.Rows.Clear();
+            //numericUpDownSL.Value = numericUpDownGN.Value = 1;
+        }
     }
 }
