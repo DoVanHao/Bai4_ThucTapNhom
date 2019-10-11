@@ -94,7 +94,7 @@
             // 
             // txttk_NSX
             // 
-            this.txttk_NSX.Location = new System.Drawing.Point(332, 27);
+            this.txttk_NSX.Location = new System.Drawing.Point(467, 27);
             this.txttk_NSX.Name = "txttk_NSX";
             this.txttk_NSX.Size = new System.Drawing.Size(121, 20);
             this.txttk_NSX.TabIndex = 90;
@@ -120,7 +120,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(256, 29);
+            this.label8.Location = new System.Drawing.Point(391, 30);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 88;

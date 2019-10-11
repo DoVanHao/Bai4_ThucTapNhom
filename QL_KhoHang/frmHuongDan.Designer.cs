@@ -57,7 +57,6 @@
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "gtDangNhap";
             treeNode1.Text = "Đăng nhập";
@@ -81,7 +80,7 @@
             treeNode10.Text = "Giới thiệu phần mềm";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode10});
-            this.treeView1.Size = new System.Drawing.Size(443, 465);
+            this.treeView1.Size = new System.Drawing.Size(247, 378);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -89,32 +88,29 @@
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Location = new System.Drawing.Point(443, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(247, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(481, 341);
+            this.pictureBox1.Size = new System.Drawing.Size(446, 277);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // txtGioiThieu
             // 
             this.txtGioiThieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGioiThieu.Location = new System.Drawing.Point(443, 341);
-            this.txtGioiThieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGioiThieu.Location = new System.Drawing.Point(247, 277);
             this.txtGioiThieu.Multiline = true;
             this.txtGioiThieu.Name = "txtGioiThieu";
-            this.txtGioiThieu.Size = new System.Drawing.Size(481, 124);
+            this.txtGioiThieu.Size = new System.Drawing.Size(446, 101);
             this.txtGioiThieu.TabIndex = 3;
             // 
             // frmHuongDan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 465);
+            this.ClientSize = new System.Drawing.Size(693, 378);
             this.Controls.Add(this.txtGioiThieu);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.treeView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmHuongDan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmHuongDan";

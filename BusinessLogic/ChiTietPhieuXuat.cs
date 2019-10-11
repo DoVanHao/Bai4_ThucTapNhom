@@ -80,6 +80,16 @@ namespace BusinessLogic
             da.Fill(dt);
             return dt;
         }
+        public DataTable ShowHangHoa(string DieuKien)
+        {
+            string sql = @"SELECT MaHH, TenHH, SoLuong, GiaNhap, GiaXuat, NSX, ThongTin
+                                                    FROM dbo.HANGHOA " + DieuKien;
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable HienThiTien(string DieuKien)
         {
             string sql = @"SELECT TongTien FROM dbo.PHIEUXUAT WHERE MaPX = '" + DieuKien + "'";
