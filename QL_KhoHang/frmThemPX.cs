@@ -36,6 +36,25 @@ namespace QL_KhoHang
             cbChiNhanh.SelectedValue = "MaCN";
             cbChiNhanh.SelectedIndex = 0;
         }
+		        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvSPX.Rows.Count; i++)
+            {
+                if (dgvSPX.Rows[i].Cells[0].Value == dgvSP.Rows[dgvSP.SelectedRows[0].Index].Cells[0].Value)
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (dgvSP.SelectedRows.Count > 0)
+            {
+                dgvSPX.Rows.AddRange(new DataGridViewRow());
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[0].Value = dgvSP.Rows[dgvSP.SelectedRows[0].Index].Cells[0].Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[1].Value = numericUpDownSL.Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[2].Value = numericUpDownGN.Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[3].Value = int.Parse(numericUpDownSL.Value.ToString()) * long.Parse(numericUpDownGN.Value.ToString());
+            }
+        }
 
         private void dgvSPX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -99,6 +118,19 @@ namespace QL_KhoHang
             dgvSPX.Rows.Clear();
             numericUpDownSL.Value = numericUpDownGN.Value = 1;
         }
+		        private void txttk_TenHH_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = hh.TKHH_TenHH(txttk_TenHH.Text);
+
+        }
+        private void txttk_NSX_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = hh.TKHH_NSX(txttk_NSX.Text);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
