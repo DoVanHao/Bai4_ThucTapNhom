@@ -80,6 +80,25 @@ namespace QL_KhoHang
             dgvXuat.DataSource = px.ShowPX("");
             dgvCTXuat.DataSource = ctpx.ShowCTPX("");
         }
+		        private void btnThemSP_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvSPX.Rows.Count; i++)
+            {
+                if (dgvSPX.Rows[i].Cells[0].Value == dgvSP.Rows[dgvSP.SelectedRows[0].Index].Cells[0].Value)
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn !!!", "Nhắc nhở", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+            if (dgvSP.SelectedRows.Count > 0)
+            {
+                dgvSPX.Rows.AddRange(new DataGridViewRow());
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[0].Value = dgvSP.Rows[dgvSP.SelectedRows[0].Index].Cells[0].Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[1].Value = numericUpDownSL.Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[2].Value = numericUpDownGN.Value;
+                dgvSPX.Rows[dgvSPX.RowCount - 2].Cells[3].Value = int.Parse(numericUpDownSL.Value.ToString()) * long.Parse(numericUpDownGN.Value.ToString());
+            }
+        }
 
         private void btnThemPN1_Click(object sender, EventArgs e)
         {
