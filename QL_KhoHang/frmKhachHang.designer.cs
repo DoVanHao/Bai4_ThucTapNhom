@@ -74,6 +74,7 @@
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblGhichu = new System.Windows.Forms.Label();
             this.txtGhichu = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panelButton.SuspendLayout();
             this.groupBoxTimKiem.SuspendLayout();
@@ -247,6 +248,7 @@
             // groupBoxTimKiem
             // 
             this.groupBoxTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.groupBoxTimKiem.Controls.Add(this.textBox1);
             this.groupBoxTimKiem.Controls.Add(this.txtKHDiaChi);
             this.groupBoxTimKiem.Controls.Add(this.lblKHDiaChi);
             this.groupBoxTimKiem.Controls.Add(this.cmbKHLoai);
@@ -273,7 +275,7 @@
             // lblKHDiaChi
             // 
             this.lblKHDiaChi.AutoSize = true;
-            this.lblKHDiaChi.Location = new System.Drawing.Point(275, 21);
+            this.lblKHDiaChi.Location = new System.Drawing.Point(261, 21);
             this.lblKHDiaChi.Name = "lblKHDiaChi";
             this.lblKHDiaChi.Size = new System.Drawing.Size(53, 17);
             this.lblKHDiaChi.TabIndex = 4;
@@ -602,6 +604,14 @@
             this.txtGhichu.Size = new System.Drawing.Size(163, 44);
             this.txtGhichu.TabIndex = 18;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(320, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(142, 25);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.txtKHDiaChi_TextChanged);
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -678,6 +688,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

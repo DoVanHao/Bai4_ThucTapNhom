@@ -150,7 +150,7 @@
             // 
             // txtTK
             // 
-            this.txtTK.Location = new System.Drawing.Point(404, 17);
+            this.txtTK.Location = new System.Drawing.Point(380, 22);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(264, 25);
             this.txtTK.TabIndex = 76;

@@ -14,9 +14,9 @@ namespace BusinessLogic
         public bool DangNhapHT(string Username, string Pass)
         {
             string sql = "SELECT * FROM dbo.DANGNHAP WHERE UserName='" + Username + "' AND Pass='" + Pass + "'";
-            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
             DataTable dt = new DataTable();
-            SqlDataAdapter ad = new SqlDataAdapter(sql, con);
+            SqlDataAdapter ad = new SqlDataAdapter(sql, conn);
 
             ad.Fill(dt);
             if (dt.Rows.Count > 0)
