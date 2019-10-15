@@ -143,5 +143,20 @@ namespace BusinessLogic
             con.Close();
             return ma;
         }
+        public DataTable TKHH_TenHH(string TenHH)
+        {
+            string sql = "SELECT * FROM dbo.HANGHOA WHERE TenHH LIKE N'%' + @TenHH + '%'";
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            cmd.Parameters.AddWithValue("@TenHH", TenHH);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
+
     }
 }
