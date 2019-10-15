@@ -201,7 +201,7 @@
             // 
             // btnRe
             // 
-            this.btnRe.Location = new System.Drawing.Point(511, 66);
+            this.btnRe.Location = new System.Drawing.Point(511, 73);
             this.btnRe.Name = "btnRe";
             this.btnRe.Size = new System.Drawing.Size(105, 33);
             this.btnRe.TabIndex = 5;
@@ -273,9 +273,9 @@
             // 
             // btnThemPN
             // 
-            this.btnThemPN.Location = new System.Drawing.Point(511, 27);
+            this.btnThemPN.Location = new System.Drawing.Point(511, 18);
             this.btnThemPN.Name = "btnThemPN";
-            this.btnThemPN.Size = new System.Drawing.Size(105, 33);
+            this.btnThemPN.Size = new System.Drawing.Size(105, 42);
             this.btnThemPN.TabIndex = 5;
             this.btnThemPN.Text = "Thêm hóa đơn";
             this.btnThemPN.UseVisualStyleBackColor = true;

@@ -30,7 +30,16 @@ namespace BusinessLogic
             cmd.Dispose();
             con.Close();
         }
-
+        public DataTable ShowHangHoa(string DieuKien)
+        {
+            string sql = @"SELECT MaHH, TenHH, SoLuong, GiaNhap, GiaXuat, NSX, ThongTin
+                                                    FROM dbo.HANGHOA " + DieuKien;
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(KetNoiDB.getconnect());
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.Fill(dt);
+            return dt;
+        }
         public DataTable HT_CTPX(string ngay1, string ngay2)
         {
             string str = "HT_TK_CTPX";
