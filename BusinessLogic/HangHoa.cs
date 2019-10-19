@@ -158,5 +158,19 @@ namespace BusinessLogic
             return dt;
         }
 
+        public DataTable TKHH_NSX(string NSX)
+        {
+            string sql = "SELECT * FROM dbo.HANGHOA WHERE NSX LIKE N'%' + @NSX + '%'";
+            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection(KetNoiDB.getconnect());
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            cmd.Parameters.AddWithValue("@NSX", NSX);
+            da.SelectCommand = cmd;
+            da.Fill(dt);
+            return dt;
+        }
     }
 }
