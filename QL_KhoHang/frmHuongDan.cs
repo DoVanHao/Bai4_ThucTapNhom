@@ -22,5 +22,10 @@ namespace QL_KhoHang
             string s = doc.ReadToEnd();
             txtGioiThieu.Text = s;
         }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show("Chào mừng bạn đến với hướng dẫn sử dụng phần mềm QUẢN LÍ KHO HÀNG");
+        }
     }
 }
